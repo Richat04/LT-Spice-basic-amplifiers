@@ -1,0 +1,22 @@
+* C:\Users\rishi\OneDrive - IIT Delhi (1)\Documents\LTspiceXVII\2023EE11143_Rishima_Assignment\Output rail to rail.asc
+M1 N001 N002 N002 N001 CMOSP l=400n w=1600n
+M2 N002 N003 N003 N001 CMOSP l=400n w=1600n
+M3 N004 N003 N008 N001 CMOSP l=400n w=1600n
+M4 N001 N004 out N001 CMOSP l=400n w=1600n
+M5 out N008 0 0 CMOSN l=400n w=1600n
+M6 N005 N005 N007 0 CMOSN l=400n w=1600n
+M7 N007 N007 0 0 CMOSN l=400n w=1600n
+M8 N004 N005 N008 N006 CMOSN l=400n w=1600n
+Vin N008 0 SINE(1.5 1.5 10)
+I1 N001 N004 4µ
+I2 N001 N005 2µ
+I3 N008 0 2µ
+I4 N003 0 2µ
+V2 N001 0 3
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\rishi\OneDrive - IIT Delhi (1)\Documents\LTspiceXVII\lib\cmp\standard.mos
+.INCLUDE tsmc018.lib
+.tran 10
+.backanno
+.end
