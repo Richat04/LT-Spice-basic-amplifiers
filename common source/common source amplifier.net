@@ -1,0 +1,20 @@
+* C:\Users\rishi\OneDrive - IIT Delhi (1)\Documents\LTspiceXVII\2023EE11143_Rishima_Assignment\common source amplifier.asc
+R1 N003 N002 5
+V§small_signal N002 0 SINE(0 0.05 10Hz 0) AC 100mV 0
+Rd N001 out 70K
+V1 N001 0 15
+R4 N001 N004 10k
+R5 N004 0 500
+M1 out N004 0 0 CMOSN l=510n w=5.5u
+C1 N004 N003 10µ
+C2 out 0 0.001n
+C3 out N004 0.45n
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\rishi\OneDrive - IIT Delhi (1)\Documents\LTspiceXVII\lib\cmp\standard.mos
+;.tran 10
+.INCLUDE tsmc018.lib
+;.op
+.ac dec 5 100 1e10
+.backanno
+.end
